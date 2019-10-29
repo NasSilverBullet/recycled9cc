@@ -1,0 +1,7 @@
+version: "3"
+services:
+  test:
+    build: .
+    volumes:
+      - .:/recycled9cc
+    working_dir: /recycled9cc
