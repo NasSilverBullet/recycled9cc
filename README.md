@@ -7,6 +7,9 @@ Refs: <https://www.sigbus.info/compilerbook>
 ## Usage
 
 ```sh
+$ git clone https://github.com/NasSilverBullet/recycled9cc.git
+$ cd recycled9cc
+$ docker-compose build
 $ docker-compose run --rm test bash
 root@f78e00cb711d:/recycled9cc# echo hello
 hello
