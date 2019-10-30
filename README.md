@@ -4,15 +4,29 @@ Refs: <https://github.com/rui314/9cc>
 
 Refs: <https://www.sigbus.info/compilerbook>
 
-## Usage
+## Install
 
 ```sh
 $ git clone https://github.com/NasSilverBullet/recycled9cc.git
 $ cd recycled9cc
 $ docker-compose build
-$ docker-compose run --rm test bash
-root@f78e00cb711d:/recycled9cc# echo hello
-hello
+```
+
+## Build
+
+```sh
+$ docker-compose run --rm 9cc make
+cc -std=c11 -g -static    9cc.c   -o 9cc
+```
+
+## Test
+
+```sh
+$ docker-compose run --rm 9cc make test
+./test.sh
+0 => 0
+42 => 42
+OK
 ```
 
 ## Dev Log
