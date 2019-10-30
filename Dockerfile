@@ -1,9 +1,10 @@
 FROM ubuntu:latest
-RUN apt update && apt install -y \
+RUN apt update \
+ && apt install -y --no-install-recommends \
     gcc \
     make \
-    git \
     binutils \
     libc6-dev \
     gdb \
-    sudo
+ && apt -y clean \
+ && rm -rf /var/lib/apt/lists/*
