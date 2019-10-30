@@ -1,2 +1,8 @@
-/.clangd
-/compile_flags.txt
+.clangd
+compile_flags.txt
+
+*~
+*.o
+tmp*
+a.out
+9cc
