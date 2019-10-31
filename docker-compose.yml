@@ -1,7 +1,10 @@
 version: "3"
 services:
-  9cc:
+  9cc: &9cc
     build: .
     volumes:
       - .:/recycled9cc
     working_dir: /recycled9cc
+  test:
+    <<: *9cc
+    command: bash -c "make clean; make; make test; make clean"
