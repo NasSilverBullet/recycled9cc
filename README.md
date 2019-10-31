@@ -35,6 +35,8 @@ OK
 
 20191030: [ステップ4：エラーメッセージを改良](https://www.sigbus.info/compilerbook#%E3%82%B9%E3%83%86%E3%83%83%E3%83%974%E3%82%A8%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%92%E6%94%B9%E8%89%AF)
 
+20191031: [アセンブリコードの生成](https://www.sigbus.info/compilerbook#%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90)
+
 ## License
 
 MIT License. See LICENSE.txt for more information.
