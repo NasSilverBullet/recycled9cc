@@ -12,21 +12,18 @@ $ cd recycled9cc
 $ docker-compose build
 ```
 
-## Build
-
-```sh
-$ docker-compose run --rm 9cc make
-cc -std=c11 -g -static    9cc.c   -o 9cc
-```
-
 ## Test
 
 ```sh
-$ docker-compose run --rm 9cc make test
+$ docker-compose run --rm test
+rm -f 9cc *.o *~ tmp*
+cc -std=c11 -g -static    9cc.c   -o 9cc
 ./test.sh
-0 => 0
-42 => 42
+
+...
+
 OK
+rm -f 9cc *.o *~ tmp*
 ```
 
 ## Dev Log
