@@ -7,4 +7,4 @@ services:
     working_dir: /recycled9cc
   test:
     <<: *9cc
-    command: bash -c "make clean; make; make test; make clean"
+    command: bash -c "make; make test"
