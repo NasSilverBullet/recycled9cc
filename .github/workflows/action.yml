@@ -7,5 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Test in docker container
+
+      - name: Build container
+        run: docker-compose build
+
+      - name: Test
         run: docker-compose run --rm test
