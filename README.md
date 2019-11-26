@@ -1,4 +1,4 @@
-# :recycle: recycled 9cc :recycle:
+# :recycle: [WIP] recycled 9cc :recycle:
 
 Refs: <https://github.com/rui314/9cc>
 
