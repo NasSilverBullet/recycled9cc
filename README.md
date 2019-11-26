@@ -1,5 +1,6 @@
-# :recycle: [WIP] recycled 9cc :recycle:
+[![Actions Status](https://github.com/NasSilverBullet/recycled9cc/workflows/Workflow/badge.svg)](https://github.com/NasSilverBullet/recycled9cc/actions)
 
+# :recycle: [WIP] recycled 9cc :recycle:
 Refs: <https://github.com/rui314/9cc>
 
 Refs: <https://www.sigbus.info/compilerbook>
@@ -7,23 +8,15 @@ Refs: <https://www.sigbus.info/compilerbook>
 ## Install
 
 ```sh
-$ git clone https://github.com/NasSilverBullet/recycled9cc.git
-$ cd recycled9cc
-$ docker-compose build
+git clone https://github.com/NasSilverBullet/recycled9cc.git
+cd recycled9cc
+docker-compose build
 ```
 
 ## Test
 
 ```sh
-$ docker-compose run --rm test
-rm -f 9cc *.o *~ tmp*
-cc -std=c11 -g -static    9cc.c   -o 9cc
-./test.sh
-
-...
-
-OK
-rm -f 9cc *.o *~ tmp*
+docker-compose run --rm test
 ```
 
 ## Dev Log
