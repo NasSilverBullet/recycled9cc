@@ -27,6 +27,8 @@ docker-compose run --rm test
 
 20191031: [アセンブリコードの生成](https://www.sigbus.info/compilerbook#%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E7%94%9F%E6%88%90)
 
+20200306: [分割コンパイルとリンク](https://www.sigbus.info/compilerbook#%E5%88%86%E5%89%B2%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB%E3%81%A8%E3%83%AA%E3%83%B3%E3%82%AF)
+
 ## License
 
 MIT License. See LICENSE.txt for more information.
