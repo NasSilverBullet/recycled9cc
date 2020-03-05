@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Build container
-        run: docker-compose build
+      - name: Build
+        run: make
 
       - name: Test
-        run: docker-compose run --rm test
+        run: make test
