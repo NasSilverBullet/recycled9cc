@@ -50,6 +50,15 @@ Token *consume_ident() {
   return t;
 }
 
+// 次のトークンがretrunのときには、トークンを1つ読み進めて
+// 真を返す。それ以外の場合には偽を返す。
+bool consume_return() {
+  if (token->kind != TK_RETURN)
+    return false;
+  token = token->next;
+  return true;
+}
+
 // 次のトークンが期待している記号のときには、トークンを1つ読み進める。
 // それ以外の場合にはエラーを報告する。
 void expect(char *op) {
@@ -119,6 +128,13 @@ void tokenize() {
     // 単項演算子
     if (strchr("+-*/()<>=;", *p)) {
       cur = new_token(TK_RESERVED, cur, p++, 1);
+      continue;
+    }
+
+    // return
+    if (strncmp(p, "return", 6) == 0 && !is_alnum(p[6])) {
+      cur = new_token(TK_RETURN, cur, p, 6);
+      p += 6;
       continue;
     }
 
