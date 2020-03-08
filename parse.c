@@ -125,6 +125,27 @@ Node *unary() {
   return primary();
 }
 
+typedef struct LVar LVar;
+
+// ローカル変数の型
+struct LVar {
+  LVar *next; // 次の変数かNULL
+  char *name; // 変数の名前
+  int len;    // 名前の長さ
+  int offset; // RBPからのオフセット
+};
+
+// ローカル変数
+LVar *locals;
+
+// 変数を名前で検索する。見つからなかった場合はNULLを返す。
+LVar *find_lvar(Token *tok) {
+  for (LVar *var = locals; var; var = var->next)
+    if (var->len == tok->len && !memcmp(tok->str, var->name, var->len))
+      return var;
+  return NULL;
+}
+
 // primary = num | ident | "(" expr ")"
 Node *primary() {
   // 次のトークンが"("なら、"(" expr ")" のはず
@@ -138,7 +159,23 @@ Node *primary() {
   if (tok) {
     Node *node = calloc(1, sizeof(Node));
     node->kind = ND_LVAR;
-    node->offset = (tok->str[0] - 'a' + 1) * 8;
+
+    LVar *lvar = find_lvar(tok);
+    if (lvar) {
+      node->offset = lvar->offset;
+    } else {
+      lvar = calloc(1, sizeof(LVar));
+      lvar->next = locals;
+      lvar->name = tok->str;
+      lvar->len = tok->len;
+      int offset = 0;
+      if (locals) {
+        offset = locals->offset;
+      }
+      lvar->offset = offset + 8;
+      node->offset = lvar->offset;
+      locals = lvar;
+    }
     return node;
   }
 
