@@ -131,6 +131,7 @@ void tokenize() {
       continue;
     }
 
+    // 数字
     if (isdigit(*p)) {
       cur = new_token(TK_NUM, cur, p, 0);
       char *q = p;
