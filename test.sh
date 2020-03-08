@@ -50,4 +50,6 @@ assert 3 'a=3; a;'
 assert 4 'a=3; a+1;'
 assert 8 'a=3; z=5; a+z;'
 
+assert 3 'hoge=1; huga=2; hoge + huga;'
+
 echo OK
